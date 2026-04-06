@@ -1,0 +1,8 @@
+node_modules/
+dist/
+pgdata/
+*.js
+*.d.ts
+*.js.map
+*.d.ts.map
+!src/**/*.sql

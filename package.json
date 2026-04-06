@@ -1,0 +1,62 @@
+{
+  "name": "escapement",
+  "version": "4.0.0",
+  "description": "Structured development workflows and dependency-aware parallel dispatch for pi",
+  "keywords": [
+    "pi-package"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "fusupo"
+  },
+  "repository": "https://github.com/fusupo/escapement",
+  "scripts": {
+    "build": "tsc",
+    "test": "node --import tsx src/core/test/run-all.ts",
+    "test:schema": "node --import tsx src/core/test/schema.test.ts",
+    "test:queries": "node --import tsx src/core/test/queries.test.ts",
+    "test:planner": "node --import tsx src/core/test/planner.test.ts",
+    "test:seed": "node --import tsx src/core/test/seed.test.ts",
+    "cli": "node --import tsx src/core/cli.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0"
+  },
+  "devDependencies": {
+    "@mariozechner/pi-ai": "^0.64.0",
+    "@mariozechner/pi-coding-agent": "^0.64.0",
+    "@sinclair/typebox": "^0.34.49",
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-tui": "*",
+    "@sinclair/typebox": "*"
+  },
+  "peerDependenciesMeta": {
+    "@mariozechner/pi-coding-agent": {
+      "optional": true
+    },
+    "@mariozechner/pi-tui": {
+      "optional": true
+    },
+    "@sinclair/typebox": {
+      "optional": true
+    }
+  },
+  "pi": {
+    "extensions": [
+      "./src/extension"
+    ],
+    "skills": [
+      "./skills"
+    ],
+    "prompts": [
+      "./prompts"
+    ]
+  }
+}
